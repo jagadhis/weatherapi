@@ -5,6 +5,7 @@ var desc = document.querySelector(".desc");
 var clouds = document.querySelector(".clouds");
 var button = document.querySelector(".submit");
 var wind = document.querySelector(".wind");
+var toggle = document.querySelector('.toggle-theme input[type="checkbox"]');
 
 button.addEventListener("click", function () {
   fetch(
@@ -28,3 +29,12 @@ button.addEventListener("click", function () {
 
     .catch((err) => alert("Wrong city name!"));
 });
+
+function toggleTheme(event) {
+  if (event.target.checked) {
+    document.body.className = "switch";
+  } else {
+    document.body.className = "";
+  }
+}
+toggle.addEventListener("click", toggleTheme);
